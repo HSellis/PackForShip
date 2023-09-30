@@ -35,6 +35,7 @@ public class GameUI : MonoBehaviour
             {
                 timeRemaining = 0;
                 // GAME ENDING WHEN TIME IS 0
+                isGameStart = false;
                 LidManager.Instance.EndGame();
             }
             DisplayRemainingTime(timeRemaining);
