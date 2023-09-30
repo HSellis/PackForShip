@@ -20,7 +20,6 @@ public class CameraMovement : MonoBehaviour
         gameObject.transform.position = cameraGameStartPos;
         Quaternion rot = Quaternion.Euler(cameraGameStartRot);
         gameObject.transform.rotation = rot;
-        Debug.Log("Rotated camera");
     }
 
     void Update()
@@ -33,5 +32,11 @@ public class CameraMovement : MonoBehaviour
         gameObject.transform.DOMove(cameraMoveToPos, 2f);
         gameObject.transform.DORotate(cameraMoveToRot,2f);
         LidManager.Instance.Invoke("StartGame",1.5f);
+    }
+
+    public void GameEndMovement() 
+    {
+        gameObject.transform.DOMove(cameraGameStartPos, 2f);
+        gameObject.transform.DORotate(cameraGameStartRot, 2f);
     }
 }
