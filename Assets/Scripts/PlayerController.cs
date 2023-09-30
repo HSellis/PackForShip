@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         hits = Physics.RaycastAll(ray, 5);
 
         isHovering = false;
-        Debug.Log(hits.Length);
+        
         foreach (RaycastHit hit in hits)
         {
             if (hit.collider.CompareTag(movableTag))

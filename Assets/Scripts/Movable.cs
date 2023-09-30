@@ -8,7 +8,7 @@ public class Movable : MonoBehaviour
     public float rotatingSpeed = 1;
     public float velocityModifier = 5;
 
-
+    public string deactivatedTag = "Untagged";
 
     // Start is called before the first frame update
     void Start()
@@ -36,5 +36,10 @@ public class Movable : MonoBehaviour
     {
         Vector3 toTargetPos = targetPos - transform.position;
         rigidBody.velocity = toTargetPos * velocityModifier;
+    }
+
+    public void Deactivate()
+    {
+        gameObject.tag = deactivatedTag;
     }
 }
