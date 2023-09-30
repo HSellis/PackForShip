@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
             StartDragging(currentMovable);
             
         }
-        if (isHovering && isDragging && Input.GetMouseButtonUp(0))
+        if (isDragging && Input.GetMouseButtonUp(0))
         {
             StopDragging(currentMovable);
         }
