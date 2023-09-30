@@ -11,6 +11,8 @@ public class ObjectSpawner : MonoBehaviour
     public float maxAngularVelocity = 25;
     public float spawnInterval = 5;
 
+    public bool isGameEnd = false;
+
     private Queue<GameObject> spawnQueue;
 
     void Awake()
@@ -20,7 +22,6 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnObject", 3);
         spawnQueue = new Queue<GameObject>(spawnedItems);
     }
 
@@ -40,7 +41,7 @@ public class ObjectSpawner : MonoBehaviour
         spawnedBody.rotation = Random.rotation;
         spawnedBody.angularVelocity = new Vector3(Random.Range(0, maxAngularVelocity), Random.Range(0, maxAngularVelocity), Random.Range(0, maxAngularVelocity));
 
-        if (spawnQueue.Count > 0)
+        if (spawnQueue.Count > 0 && !isGameEnd)
         {
             Invoke("SpawnObject", spawnInterval);
 

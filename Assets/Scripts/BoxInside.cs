@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class BoxInside : MonoBehaviour
 {
-    private int objectCount = 0;
-
+    public static BoxInside Instance;
+    public int objectCount = 0;
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

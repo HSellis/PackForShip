@@ -23,7 +23,6 @@ public class Game_Manager : MonoBehaviour
     void Update()
     {
         if (isGameStart) {
-            Debug.Log("timer going");
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -42,13 +41,19 @@ public class Game_Manager : MonoBehaviour
         CameraMovement.Instance.GameStartMovement();
         LidManager.Instance.Invoke("StartGame", 1f);
         isGameStart = true;
+        ObjectSpawner.Instance.Invoke("SpawnObject", 3);
     }
 
     public void GameEnd() {
+        // tell object spawner to stop
+        ObjectSpawner.Instance.isGameEnd = true;
+        int score = BoxInside.Instance.objectCount;
+        bool isWin = score >= maxAmountObjects ? true : false;
         // tell lid to endgame
-        LidManager.Instance.EndGame();
-        // liigub kaamera
+        LidManager.Instance.EndGame(isWin, score, maxAmountObjects);
+        // move camera to end screen
         CameraMovement.Instance.Invoke("GameEndMovement", 1f);
+
     }
 
     public void RestartGame()

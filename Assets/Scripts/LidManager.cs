@@ -5,12 +5,15 @@ using DG.Tweening;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LidManager : MonoBehaviour
 {
     public static LidManager Instance;
     public GameObject GameStartPanel;
     public GameObject GameEndingPanel;
+    public TextMeshProUGUI GameEndingText;
+    public TextMeshProUGUI GameEndingScoreText;
     public Vector3 lidStartPos = new Vector3(0.5f, 0.04f, 0);
     public Vector3 lidStartRot = new Vector3(0, 0, 0);
     private void Awake()
@@ -27,10 +30,19 @@ public class LidManager : MonoBehaviour
         gameObject.transform.DORotate(new Vector3(0, 0, 230), 1f, RotateMode.FastBeyond360);
     }
 
-    public void EndGame() 
+    public void EndGame(bool isWin, int score, int maxScore) 
     {
         GameStartPanel.SetActive(false);
         GameEndingPanel.SetActive(true);
+        if (isWin) {
+            GameEndingText.text = "You win!";
+            GameEndingScoreText.text = "You packed "+score+" out of "+maxScore+" things.";
+        }
+        else
+        {
+            GameEndingText.text = "You lose!";
+            GameEndingScoreText.text = "You packed " + score + " out of " + maxScore + " things.";
+        }
         gameObject.transform.DORotate(lidStartRot, 1f, RotateMode.FastBeyond360);
     }
 }
