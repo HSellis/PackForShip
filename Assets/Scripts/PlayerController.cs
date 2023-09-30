@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public string movableTag = "Movable";
     public string heightPlaneTag = "HeightPlane";
 
+    public float movableRotatingSpeed = 1;
+
     //private Plane targetPlane;
     private Movable currentMovable;
     private Vector3 movablePosition;
@@ -61,7 +63,45 @@ public class PlayerController : MonoBehaviour
         if (isDragging && Input.GetMouseButton(0))
         {
             currentMovable.transform.position = movablePosition;
+
+            // Rotating
+            Transform currentMovableTransform = currentMovable.transform;
+
+            // Tilt
+            if (Input.GetKey(KeyCode.W))
+            {
+                RotateMovable(currentMovableTransform, currentMovableTransform.right, 1);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                RotateMovable(currentMovableTransform, currentMovableTransform.right, -1);
+            }
+
+            // Left-Right
+            if (Input.GetKey(KeyCode.A))
+            {
+                RotateMovable(currentMovableTransform, currentMovableTransform.up, 1);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                RotateMovable(currentMovableTransform, currentMovableTransform.up, -1);
+            }
+
+            // Roll
+            if (Input.GetKey(KeyCode.Q))
+            {
+                RotateMovable(currentMovableTransform, currentMovableTransform.forward, 1);
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                RotateMovable(currentMovableTransform, currentMovableTransform.forward, -1);
+            }
         }
+    }
+
+    private void RotateMovable(Transform movableTrans, Vector3 rotationAxis, int modifier)
+    {
+        movableTrans.RotateAround(movableTrans.position, rotationAxis, Time.deltaTime * modifier * movableRotatingSpeed * 90f);
     }
 
     private void StartDragging(Movable movable)
