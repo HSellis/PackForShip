@@ -12,9 +12,9 @@ public class CameraMovement : MonoBehaviour
     public Vector3 cameraMoveToPos = new Vector3(0.05f,1.5f,-1f);
     public Vector3 cameraMoveToRot = new Vector3(45, 0, 0);
 
-    public float rotationMinX = -45f;
-    public float rotationMaxX = 45f;
-    public float rotationMinY = 45f;
+    public float rotationMinX = 40;
+    public float rotationMaxX = 70;
+    public float rotationMinY = -45f;
     public float rotationMaxY = 45f;
 
     public float cameraRotationSpeed = 250;
@@ -33,6 +33,8 @@ public class CameraMovement : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
+            Quaternion rotationBefore = transform.rotation;
+
             float rotationX = Input.GetAxis("Mouse X");
             float rotationY = Input.GetAxis("Mouse Y");
             transform.RotateAround(transform.position, Vector3.up, Time.deltaTime * cameraRotationSpeed * rotationX);
@@ -42,10 +44,10 @@ public class CameraMovement : MonoBehaviour
             if (eulerRotation.x > 180) eulerRotation.x -= 360;
             if (eulerRotation.y > 180) eulerRotation.y -= 360;
 
-            if (eulerRotation.x < rotationMinX) transform.rotation = Quaternion.Euler(rotationMinX, eulerRotation.y, eulerRotation.z);
-            else if (eulerRotation.x > rotationMaxX) transform.rotation = Quaternion.Euler(rotationMaxX, eulerRotation.y, eulerRotation.z);
-            if (eulerRotation.y < rotationMinY) transform.rotation = Quaternion.Euler(eulerRotation.x, rotationMinY, eulerRotation.z);
-            else if (eulerRotation.y > rotationMaxY) transform.rotation = Quaternion.Euler(eulerRotation.x, rotationMaxY, eulerRotation.z);
+            if (eulerRotation.x < rotationMinX || eulerRotation.x > rotationMaxX || eulerRotation.y < rotationMinY || eulerRotation.y > rotationMaxY)
+            {
+                transform.rotation = rotationBefore;
+            }
         }
     }
 
