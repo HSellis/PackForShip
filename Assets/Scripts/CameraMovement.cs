@@ -40,7 +40,6 @@ public class CameraMovement : MonoBehaviour
     {
         gameObject.transform.DOMove(cameraMoveToPos, 2f);
         gameObject.transform.DORotate(cameraMoveToRot,2f);
-        LidManager.Instance.Invoke("StartGame",1.5f);
     }
 
     public void GameEndMovement() 

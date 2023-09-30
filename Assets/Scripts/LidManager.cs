@@ -33,13 +33,4 @@ public class LidManager : MonoBehaviour
         GameEndingPanel.SetActive(true);
         gameObject.transform.DORotate(lidStartRot, 1f, RotateMode.FastBeyond360);
     }
-
-    public void RestartGame() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // RESTART GAME LOAD IN MAIN SCENE AGAIN
-    }
-
-    public void QuitGame() {
-        Application.Quit();
-    }
 }
