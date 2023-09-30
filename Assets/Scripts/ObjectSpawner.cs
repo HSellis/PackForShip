@@ -6,9 +6,11 @@ public class ObjectSpawner : MonoBehaviour
 {
     public static ObjectSpawner Instance;
     public List<GameObject> spawnedItems;
-    
-    public Vector3 spawnVelocity;
-    public float maxAngularVelocity = 25;
+
+    //public Vector3 spawnVelocity;
+    public float spawnVelocityModifier = 2;
+    public float spawnVectorRandomizer = 0.25f;
+    public float maxAngularVelocity = 10;
     public float spawnInterval = 5;
 
     public bool isGameEnd = false;
@@ -37,7 +39,11 @@ public class ObjectSpawner : MonoBehaviour
         GameObject spawnedObject = Instantiate(newMovable, transform.position, Quaternion.identity);
 
         Rigidbody spawnedBody = spawnedObject.GetComponent<Rigidbody>();
-        spawnedBody.velocity = spawnVelocity;
+        spawnedBody.velocity = spawnVelocityModifier * new Vector3(
+            transform.forward.x + Random.Range(-spawnVectorRandomizer, spawnVectorRandomizer),
+            transform.forward.y + Random.Range(-spawnVectorRandomizer, spawnVectorRandomizer),
+            transform.forward.z + Random.Range(-spawnVectorRandomizer, spawnVectorRandomizer)
+        ).normalized;
         spawnedBody.rotation = Random.rotation;
         spawnedBody.angularVelocity = new Vector3(Random.Range(0, maxAngularVelocity), Random.Range(0, maxAngularVelocity), Random.Range(0, maxAngularVelocity));
 
