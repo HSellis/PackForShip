@@ -11,6 +11,8 @@ public class CameraMovement : MonoBehaviour
 
     public Vector3 cameraMoveToPos = new Vector3(0.05f,1.5f,-1f);
     public Vector3 cameraMoveToRot = new Vector3(45, 0, 0);
+
+    public float cameraRotationSpeed = 10;
     public void Awake()
     {
         Instance = this;
@@ -24,6 +26,13 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButton(1))
+        {
+            float rotationX = Input.GetAxis("Mouse X");
+            float rotationY = Input.GetAxis("Mouse Y");
+            transform.RotateAround(transform.position, transform.up, Time.deltaTime * cameraRotationSpeed * rotationX);
+            transform.RotateAround(transform.position, transform.right, Time.deltaTime * cameraRotationSpeed * -rotationY);
+        }
         
     }
 

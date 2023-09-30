@@ -809,6 +809,7 @@ MonoBehaviour:
   cameraGameStartRot: {x: 90, y: 0, z: 0}
   cameraMoveToPos: {x: 0.05, y: 1.5, z: -1}
   cameraMoveToRot: {x: 45, y: 0, z: 0}
+  cameraRotationSpeed: 45
 --- !u!1 &1303262402
 GameObject:
   m_ObjectHideFlags: 0
