@@ -1357,7 +1357,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718134726}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1515}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1563}
   m_LocalScale: {x: 0.0001, y: 0.000100000005, z: 0.000100000005}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmountObjects: 0
-  timeRemaining: 30
+  timeRemaining: 10
   isGameStart: 0
 --- !u!1 &1198056509
 GameObject:
@@ -1647,8 +1647,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198056509}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0536}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0455}
+  m_LocalScale: {x: 0.0001, y: 0.0001, z: 0.0001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2008161427}
@@ -1657,7 +1657,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -874.509, y: -497.5882}
-  m_SizeDelta: {x: 0.23282, y: 0.07015}
+  m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198056511
 MonoBehaviour:
@@ -1735,8 +1735,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c21594c6cbed83a498d2a55c5d857c34, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1887,7 +1887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1303262403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2059,8 +2059,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.05
-  m_fontSizeBase: 0.05
+  m_fontSize: 0.03
+  m_fontSizeBase: 0.03
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
