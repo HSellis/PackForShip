@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
+    public static ObjectSpawner Instance;
     public List<GameObject> spawnedItems;
     
     public Vector3 spawnVelocity;
@@ -12,6 +13,10 @@ public class ObjectSpawner : MonoBehaviour
 
     private Queue<GameObject> spawnQueue;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

@@ -25,7 +25,6 @@ public class LidManager : MonoBehaviour
     public void StartGame()
     {
         gameObject.transform.DORotate(new Vector3(0, 0, 230), 1f, RotateMode.FastBeyond360);
-        GameUI.Instance.isGameStart = true;
     }
 
     public void EndGame() 
@@ -33,8 +32,6 @@ public class LidManager : MonoBehaviour
         GameStartPanel.SetActive(false);
         GameEndingPanel.SetActive(true);
         gameObject.transform.DORotate(lidStartRot, 1f, RotateMode.FastBeyond360);
-        CameraMovement.Instance.Invoke("GameEndMovement", 1f);
-
     }
 
     public void RestartGame() 

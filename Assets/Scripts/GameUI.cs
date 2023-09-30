@@ -7,11 +7,7 @@ using TMPro;
 public class GameUI : MonoBehaviour
 {
     public static GameUI Instance;
-    public float timeRemaining = 30;
     public TextMeshProUGUI timeText;
-
-    public bool isGameStart = false;
-
     public void Awake()
     {
         Instance = this;
@@ -24,25 +20,10 @@ public class GameUI : MonoBehaviour
 
     void Update()
     {
-        if (isGameStart)
-        {
-
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                timeRemaining = 0;
-                // GAME ENDING WHEN TIME IS 0
-                isGameStart = false;
-                LidManager.Instance.EndGame();
-            }
-            DisplayRemainingTime(timeRemaining);
-        }
+        
     }
 
-    void DisplayRemainingTime(float time_) 
+    public void DisplayRemainingTime(float time_) 
     {
         int minutes = Mathf.FloorToInt(time_ / 60);
         int seconds = Mathf.FloorToInt(time_ % 60);
