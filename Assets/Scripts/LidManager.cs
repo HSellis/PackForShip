@@ -4,15 +4,23 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class LidManager : MonoBehaviour
 {
     public static LidManager Instance;
+    public GameObject GameStartPanel;
+    public GameObject GameEndingPanel;
     public Vector3 lidStartPos = new Vector3(0.5f, 0.04f, 0);
     public Vector3 lidStartRot = new Vector3(0, 0, 0);
     private void Awake()
     {
         Instance = this;
+    }
+    void Start()
+    {
+        GameEndingPanel.SetActive(false);
+        GameStartPanel.SetActive(true);
     }
     public void StartGame()
     {
@@ -22,8 +30,19 @@ public class LidManager : MonoBehaviour
 
     public void EndGame() 
     {
+        GameStartPanel.SetActive(false);
+        GameEndingPanel.SetActive(true);
         gameObject.transform.DORotate(lidStartRot, 1f, RotateMode.FastBeyond360);
         CameraMovement.Instance.Invoke("GameEndMovement", 1f);
 
+    }
+
+    public void RestartGame() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // RESTART GAME LOAD IN MAIN SCENE AGAIN
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 }
