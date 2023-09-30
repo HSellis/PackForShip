@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Game_Manager : MonoBehaviour
+public class GameController : MonoBehaviour
 {
-    public static Game_Manager Instance;
+    public static GameController Instance;
     public int maxAmountObjects;
 
     public float timeRemaining = 30;

@@ -12,7 +12,12 @@ public class CameraMovement : MonoBehaviour
     public Vector3 cameraMoveToPos = new Vector3(0.05f,1.5f,-1f);
     public Vector3 cameraMoveToRot = new Vector3(45, 0, 0);
 
-    public float cameraRotationSpeed = 10;
+    public float rotationMinX = -45f;
+    public float rotationMaxX = 45f;
+    public float rotationMinY = 45f;
+    public float rotationMaxY = 45f;
+
+    public float cameraRotationSpeed = 250;
     public void Awake()
     {
         Instance = this;
@@ -31,9 +36,17 @@ public class CameraMovement : MonoBehaviour
             float rotationX = Input.GetAxis("Mouse X");
             float rotationY = Input.GetAxis("Mouse Y");
             transform.RotateAround(transform.position, Vector3.up, Time.deltaTime * cameraRotationSpeed * rotationX);
-            transform.RotateAround(transform.position, transform.right, Time.deltaTime * cameraRotationSpeed * -rotationY);
+            transform.RotateAround(transform.position, Vector3.right, Time.deltaTime * cameraRotationSpeed * -rotationY);
+
+            Vector3 eulerRotation = transform.rotation.eulerAngles;
+            if (eulerRotation.x > 180) eulerRotation.x -= 360;
+            if (eulerRotation.y > 180) eulerRotation.y -= 360;
+
+            if (eulerRotation.x < rotationMinX) transform.rotation = Quaternion.Euler(rotationMinX, eulerRotation.y, eulerRotation.z);
+            else if (eulerRotation.x > rotationMaxX) transform.rotation = Quaternion.Euler(rotationMaxX, eulerRotation.y, eulerRotation.z);
+            if (eulerRotation.y < rotationMinY) transform.rotation = Quaternion.Euler(eulerRotation.x, rotationMinY, eulerRotation.z);
+            else if (eulerRotation.y > rotationMaxY) transform.rotation = Quaternion.Euler(eulerRotation.x, rotationMaxY, eulerRotation.z);
         }
-        
     }
 
     public void GameStartMovement() // Moving camera after lid is down
