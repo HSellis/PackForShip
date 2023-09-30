@@ -30,7 +30,7 @@ public class CameraMovement : MonoBehaviour
         {
             float rotationX = Input.GetAxis("Mouse X");
             float rotationY = Input.GetAxis("Mouse Y");
-            transform.RotateAround(transform.position, transform.up, Time.deltaTime * cameraRotationSpeed * rotationX);
+            transform.RotateAround(transform.position, Vector3.up, Time.deltaTime * cameraRotationSpeed * rotationX);
             transform.RotateAround(transform.position, transform.right, Time.deltaTime * cameraRotationSpeed * -rotationY);
         }
         
