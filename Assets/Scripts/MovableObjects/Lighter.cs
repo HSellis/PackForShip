@@ -19,10 +19,16 @@ public class Lighter : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Book collidedBook = collision.gameObject.GetComponent<Book>();
-        if (collidedBook != null)
+        Towel collidedTowel = collision.gameObject.GetComponent<Towel>();
+        MeshRenderer collidedRenderer = null;
+        if (collidedBook != null || collidedTowel != null)
         {
-            MeshRenderer bookRenderer = collidedBook.GetComponent<MeshRenderer>();
-            bookRenderer.material.color = Color.red;
+           collidedRenderer = collision.gameObject.GetComponent<MeshRenderer>();
+        }
+        if (collidedRenderer != null)
+        {
+            Color currentColor = collidedRenderer.material.color;
+            collidedRenderer.material.color = new Color(currentColor.r, currentColor.g, currentColor.b, 180);
         }
     }
 }
