@@ -159,6 +159,7 @@ MonoBehaviour:
   velocityModifier: 5
   deactivatedTag: Untagged
   grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
+  collisionClip: {fileID: 8300000, guid: 5d440183b9234da4c9785d3be95600cd, type: 3}
 --- !u!82 &182420273024037915
 AudioSource:
   m_ObjectHideFlags: 0
