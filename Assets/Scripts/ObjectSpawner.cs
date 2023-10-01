@@ -35,8 +35,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        GameObject newMovable = spawnQueue.Dequeue();
-        GameObject spawnedObject = Instantiate(newMovable, transform.position, Quaternion.identity);
+        GameObject spawnedObject = Instantiate(spawnQueue.Dequeue(), transform.position, Quaternion.identity);
 
         Rigidbody spawnedBody = spawnedObject.GetComponent<Rigidbody>();
         spawnedBody.velocity = spawnVelocityModifier * new Vector3(

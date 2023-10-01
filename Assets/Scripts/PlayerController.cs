@@ -98,12 +98,12 @@ public class PlayerController : MonoBehaviour
     private void StartDragging(Movable movable)
     {
         isDragging = true;
-        movable.SwitchGravity(false);
+        movable.Grab();
     }
 
     private void StopDragging(Movable movable)
     {
         isDragging = false;
-        movable.SwitchGravity(true);
+        movable.Release();
     }
 }

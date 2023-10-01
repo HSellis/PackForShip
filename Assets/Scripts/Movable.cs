@@ -5,15 +5,19 @@ using UnityEngine;
 public class Movable : MonoBehaviour
 {
     private Rigidbody rigidBody;
+    private AudioSource audioSource;
+
     public float rotatingSpeed = 1;
     public float velocityModifier = 5;
-
     public string deactivatedTag = "Untagged";
+    public AudioClip grabClip;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+        Debug.Log(grabClip);
     }
 
     // Update is called once per frame
@@ -22,9 +26,15 @@ public class Movable : MonoBehaviour
         
     }
 
-    public virtual void SwitchGravity(bool isGravity)
+    public virtual void Grab()
     {
-        rigidBody.useGravity = isGravity;
+        rigidBody.useGravity = false;
+        audioSource.PlayOneShot(grabClip);
+    }
+
+    public virtual void Release()
+    {
+        rigidBody.useGravity = true;
     }
 
     public void Rotate(Vector3 rotationAxis, int modifier)

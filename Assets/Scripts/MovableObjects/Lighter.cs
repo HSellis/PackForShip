@@ -17,9 +17,9 @@ public class Lighter : Movable
         
     }
 
-    public override void SwitchGravity(bool isGravity)
+    public override void Grab()
     {
-        GetComponent<Rigidbody>().useGravity = isGravity;
+        GetComponent<Rigidbody>().useGravity = false;
         //base.SwitchGravity(isGravity); // doesnt work
 
         var emitParams = new ParticleSystem.EmitParams();
