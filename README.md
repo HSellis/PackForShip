@@ -1,4 +1,4 @@
-# UTGameJam2023
+# Pack For Ship
 
 Take on the role of Rynno Jalgsaar in a frantic race against time to pack his suitcase for a new construction job overseas. Gather essential items and make quick decisions to fit everything in the suitcase. Can you make it on the ship on time?!
 
