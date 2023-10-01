@@ -1448,7 +1448,7 @@ MonoBehaviour:
   cameraGameStartRot: {x: 90, y: -90, z: 0}
   cameraMoveToPos: {x: 0.05, y: 1.75, z: -1}
   cameraMoveToRot: {x: 45, y: 0, z: 0}
-  rotationMinX: 40
+  rotationMinX: 30
   rotationMaxX: 70
   rotationMinY: -45
   rotationMaxY: 45
@@ -2097,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1303262403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2986,6 +2986,63 @@ Transform:
   - {fileID: 44860760}
   m_Father: {fileID: 1945587455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1860719136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.296
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.221
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.595
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.18304467
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.18298079
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6831319
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.68289346
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_Name
+      value: Ehitaja
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
 --- !u!1001 &1939943663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4212,3 +4269,4 @@ SceneRoots:
   - {fileID: 351248019}
   - {fileID: 543450652599756068}
   - {fileID: 370549276}
+  - {fileID: 1860719136}
