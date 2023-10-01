@@ -747,6 +747,10 @@ MonoBehaviour:
   cameraGameStartRot: {x: 90, y: 0, z: 0}
   cameraMoveToPos: {x: 0.05, y: 1.5, z: -1}
   cameraMoveToRot: {x: 45, y: 0, z: 0}
+  rotationMinX: 40
+  rotationMaxX: 70
+  rotationMinY: -45
+  rotationMaxY: 45
   cameraRotationSpeed: 45
 --- !u!1 &1303262402
 GameObject:
@@ -1021,7 +1025,8 @@ MonoBehaviour:
   - {fileID: 8559189798616413922, guid: 25671a4d8a7753742ae4236619c0a77d, type: 3}
   - {fileID: 8559189798616413922, guid: 25671a4d8a7753742ae4236619c0a77d, type: 3}
   - {fileID: 8559189798616413922, guid: 25671a4d8a7753742ae4236619c0a77d, type: 3}
-  spawnVelocity: {x: -2.5, y: 1, z: 0}
+  spawnVelocityModifier: 2
+  spawnVectorRandomizer: 0.25
   maxAngularVelocity: 25
   spawnInterval: 5
   isGameEnd: 0
