@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class GameController : MonoBehaviour
 
     public float timeRemaining = 30;
     public bool isGameStart = false;
+
+    public GameObject winStory;
+    public GameObject loseStory;
+    public bool isWin=false;
+    public int score = 0;
 
     public void Awake()
     {
@@ -47,13 +53,33 @@ public class GameController : MonoBehaviour
     public void GameEnd() {
         // tell object spawner to stop
         ObjectSpawner.Instance.isGameEnd = true;
-        int score = BoxInside.Instance.objectCount;
-        bool isWin = score >= maxAmountObjects ? true : false;
+        score = BoxInside.Instance.objectCount;
+        isWin = score >= maxAmountObjects ? true : false;
+        // cutscenes
+        if (isWin) 
+        {
+            winStory.SetActive(true);
+            loseStory.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("aaa");
+            loseStory.SetActive(true);
+            winStory.SetActive(false);
+        }
+        Invoke("GameEndContinue", 5f);
+
+
+
+
+    }
+    public void GameEndContinue() {
+        winStory.SetActive(false);
+        loseStory.SetActive(false);
         // tell lid to endgame
         LidManager.Instance.EndGame(isWin, score, maxAmountObjects);
         // move camera to end screen
         CameraMovement.Instance.Invoke("GameEndMovement", 1f);
-
     }
 
     public void RestartGame()
