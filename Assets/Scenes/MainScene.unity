@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.8110623, g: 0.8621734, b: 0.95321804, a: 1}
+  m_IndirectSpecularColor: {r: 0.8111597, g: 0.8622065, b: 0.9532214, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2449,7 +2449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1303262403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2928,7 +2928,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.05, z: 0.1}
+  m_Size: {x: 0.1, y: 0.03, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1508449464
 Transform:
@@ -2939,7 +2939,7 @@ Transform:
   m_GameObject: {fileID: 1508449461}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0.02433}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0.01619}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4037,9 +4037,9 @@ MonoBehaviour:
   GameStartPanel: {fileID: 1354291950}
   GameEndingPanel: {fileID: 945716264}
   suitcaseClips: {fileID: 446346592}
-  chestOpenClip: {fileID: 0}
-  chestCloseClip: {fileID: 0}
-  buttonClickClip: {fileID: 0}
+  chestOpenClip: {fileID: 8300000, guid: a080ef52afa54c44c9e814980debd42e, type: 3}
+  chestCloseClip: {fileID: 8300000, guid: 34138eda7f5db8948afbb6c143f04784, type: 3}
+  buttonClickClip: {fileID: 8300000, guid: 39102fb787c182d4ab6c792a7c70f3ca, type: 3}
   GameEndingText: {fileID: 367719750}
   GameEndingScoreText: {fileID: 2008514545}
   lidStartPos: {x: 0, y: 0, z: 0}
