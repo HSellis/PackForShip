@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2x2_Underoos
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4369d0ea4ac200448a15d05aa2c6600c, type: 3}
+      propertyPath: m_TagString
+      value: Movable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -148,6 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a98eb6ccb61ff4095906f8c4e314f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatingSpeed: 1
+  rotatingSpeed: 2
   velocityModifier: 5
   deactivatedTag: Untagged

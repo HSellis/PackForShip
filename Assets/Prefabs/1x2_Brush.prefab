@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,7 +137,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7632835674066542253, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
 --- !u!114 &3025817716237866575
@@ -152,6 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a98eb6ccb61ff4095906f8c4e314f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatingSpeed: 1
+  rotatingSpeed: 2
   velocityModifier: 5
   deactivatedTag: Untagged

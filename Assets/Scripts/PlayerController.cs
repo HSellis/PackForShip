@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject objectHeightPlane;
     public string movableTag = "Movable";
     public string heightPlaneTag = "HeightPlane";
 
@@ -18,7 +17,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //targetPlane = new Plane(objectHeightPlane.transform.up, objectHeightPlane.transform.position);
         isHovering = false;
         isDragging = false;
     }
