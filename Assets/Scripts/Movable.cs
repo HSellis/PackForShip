@@ -11,6 +11,7 @@ public class Movable : MonoBehaviour
     public float velocityModifier = 5;
     public string deactivatedTag = "Untagged";
     public AudioClip grabClip;
+    public AudioClip collisionClip;
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +52,10 @@ public class Movable : MonoBehaviour
     public void Deactivate()
     {
         gameObject.tag = deactivatedTag;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        audioSource.PlayOneShot(collisionClip);
     }
 }
