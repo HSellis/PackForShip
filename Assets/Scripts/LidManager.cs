@@ -27,7 +27,7 @@ public class LidManager : MonoBehaviour
     }
     public void StartGame()
     {
-        gameObject.transform.DORotate(new Vector3(0, 0, 230), 1f, RotateMode.FastBeyond360);
+        gameObject.transform.DORotate(new Vector3(0, 0, 190), 1f, RotateMode.FastBeyond360);
     }
 
     public void EndGame(bool isWin, int score, int maxScore) 
