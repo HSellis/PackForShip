@@ -22,7 +22,7 @@ public class Movable : MonoBehaviour
         
     }
 
-    public void SwitchGravity(bool isGravity)
+    public virtual void SwitchGravity(bool isGravity)
     {
         rigidBody.useGravity = isGravity;
     }

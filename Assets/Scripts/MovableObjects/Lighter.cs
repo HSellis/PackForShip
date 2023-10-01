@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lighter : MonoBehaviour
+public class Lighter : Movable
 {
+    private ParticleSystem fireParticles;
     // Start is called before the first frame update
     void Start()
     {
-        
+        fireParticles = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public override void SwitchGravity(bool isGravity)
+    {
+        base.SwitchGravity(isGravity);
+
+        var emitParams = new ParticleSystem.EmitParams();
+        fireParticles.Emit(emitParams, 10);
     }
 
     private void OnCollisionEnter(Collision collision)
