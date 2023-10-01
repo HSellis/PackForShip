@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Vodka : MonoBehaviour
 {
+    private AudioSource audioSource;
+    public AudioClip glassBreakClip;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class Vodka : MonoBehaviour
 
     public void Shatter()
     {
+        audioSource.PlayOneShot(glassBreakClip);
         Destroy(gameObject);
     }
 }

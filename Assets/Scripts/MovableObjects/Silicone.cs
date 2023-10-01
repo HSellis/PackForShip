@@ -5,12 +5,15 @@ using UnityEngine;
 public class Silicone : MonoBehaviour
 {
     public float explosionForce = 10.0f;
-    public float explosionRadius = 5.0f; 
+    public float explosionRadius = 5.0f;
+
+    public AudioClip explostionClip;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,8 @@ public class Silicone : MonoBehaviour
                     rb.AddForce(direction.normalized * explosionForce, ForceMode.Impulse);
                 }
             }
+
+            audioSource.PlayOneShot(explostionClip);
         }
     }
 }

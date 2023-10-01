@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f999cd31ee04bda41a0a70eb2a096e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glassBreakClip: {fileID: 8300000, guid: 066589a446ca1c24b95a34b4f1cbc477, type: 3}
 --- !u!82 &6543965432984237658
 AudioSource:
   m_ObjectHideFlags: 0

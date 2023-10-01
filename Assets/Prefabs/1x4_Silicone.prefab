@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 10
   explosionRadius: 5
+  explostionClip: {fileID: 8300000, guid: 5ce51e6151c63964092220220c91b161, type: 3}
 --- !u!82 &5021205722243643905
 AudioSource:
   m_ObjectHideFlags: 0
