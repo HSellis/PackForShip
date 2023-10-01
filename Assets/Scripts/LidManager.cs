@@ -9,11 +9,17 @@ using TMPro;
 
 public class LidManager : MonoBehaviour
 {
+    private AudioSource audioSource;
+
     public static LidManager Instance;
     public GameObject GameStartPanel;
     public GameObject GameEndingPanel;
 
     public GameObject suitcaseClips;
+
+    public AudioClip chestOpenClip;
+    public AudioClip chestCloseClip;
+    public AudioClip buttonClickClip;
 
     public TextMeshProUGUI GameEndingText;
     public TextMeshProUGUI GameEndingScoreText;
@@ -27,11 +33,12 @@ public class LidManager : MonoBehaviour
     {
         GameEndingPanel.SetActive(false);
         GameStartPanel.SetActive(true);
+        audioSource = GetComponent<AudioSource>();
     }
     public void StartGame()
     {
         gameObject.transform.DORotate(new Vector3(0, 0, 190), 2f, RotateMode.FastBeyond360);
-
+        audioSource.PlayOneShot(chestOpenClip);
     }
 
     public void EndGame(bool isWin, int score, int maxScore) 
@@ -48,5 +55,11 @@ public class LidManager : MonoBehaviour
             GameEndingScoreText.text = "You packed " + score + " out of " + maxScore + " things.";
         }
         gameObject.transform.DORotate(lidStartRot, 1f, RotateMode.FastBeyond360);
+        audioSource.PlayOneShot(chestCloseClip);
+    }
+
+    public void PlayButtonClickSound()
+    {
+        audioSource.PlayOneShot(buttonClickClip);
     }
 }
