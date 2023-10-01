@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class StartGameStory : MonoBehaviour
 {
+    public Animator animator;
     void Start()
     {
-        Invoke("loadLevel", 2f);
+        Invoke("FadeToLEvel", 5f);
     }
-    public void loadLevel()
+    public void FadeToLEvel() 
     {
+        Debug.Log("fading out");
+        animator.SetTrigger("FadeOut");
+    }
+    public void OnFadeComplete() {
+        Debug.Log("new scene");
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }
