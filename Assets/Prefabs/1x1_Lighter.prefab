@@ -4973,6 +4973,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1883619c38210e840836eccc26bb9b62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 467042659572429942}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1883619c38210e840836eccc26bb9b62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7730491124044657364}
   m_SourcePrefab: {fileID: 100100000, guid: 1883619c38210e840836eccc26bb9b62, type: 3}
 --- !u!4 &6989651843049674737 stripped
 Transform:
@@ -5045,11 +5048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f9b43cf3cbf7346810470f18b64d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatingSpeed: 2
-  velocityModifier: 5
-  deactivatedTag: Untagged
-  grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
-  collisionClip: {fileID: 8300000, guid: 8c2ba5dd44a67b84a919dbd44c88cf94, type: 3}
 --- !u!82 &467042659572429942
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5146,3 +5144,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7730491124044657364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7659475063436021067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a98eb6ccb61ff4095906f8c4e314f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatingSpeed: 1
+  velocityModifier: 5
+  deactivatedTag: Untagged
+  grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
+  collisionClip: {fileID: 8300000, guid: 8c2ba5dd44a67b84a919dbd44c88cf94, type: 3}

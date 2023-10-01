@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lighter : Movable
+public class Lighter : MonoBehaviour
 {
     private ParticleSystem fireParticles;
     // Start is called before the first frame update
     void Start()
     {
-        fireParticles = GetComponent<ParticleSystem>();
+        //fireParticles = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -17,16 +17,16 @@ public class Lighter : Movable
         
     }
 
-    public override void Grab()
+    public void Grab()
     {
         GetComponent<Rigidbody>().useGravity = false;
         //base.SwitchGravity(isGravity); // doesnt work
 
-        var emitParams = new ParticleSystem.EmitParams();
-        fireParticles.Emit(emitParams, 10);
+        //var emitParams = new ParticleSystem.EmitParams();
+        //fireParticles.Emit(emitParams, 10);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         Book collidedBook = collision.gameObject.GetComponent<Book>();
         Towel collidedTowel = collision.gameObject.GetComponent<Towel>();

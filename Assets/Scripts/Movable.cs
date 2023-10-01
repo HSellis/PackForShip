@@ -54,7 +54,7 @@ public class Movable : MonoBehaviour
         gameObject.tag = deactivatedTag;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         audioSource.PlayOneShot(collisionClip);
     }
