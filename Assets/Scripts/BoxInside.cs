@@ -24,9 +24,13 @@ public class BoxInside : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         Movable collidedMovable = other.gameObject.GetComponent<Movable>();
-        objectCount++;
-        collidedMovable.Deactivate();
-        Debug.Log("object count:" + objectCount);
+        if (collidedMovable != null && !collidedMovable.isDeactivated)
+        {
+            objectCount++;
+            collidedMovable.Deactivate();
+            Debug.Log("object count:" + objectCount);
+        }
     }
 }
