@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cf08cbc4b826c3442b15f0d5b0e110a4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf08cbc4b826c3442b15f0d5b0e110a4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf08cbc4b826c3442b15f0d5b0e110a4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf08cbc4b826c3442b15f0d5b0e110a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -160,6 +160,7 @@ MonoBehaviour:
   deactivatedTag: Untagged
   grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
   collisionClip: {fileID: 8300000, guid: 5d440183b9234da4c9785d3be95600cd, type: 3}
+  isDeactivated: 0
 --- !u!82 &1499586107395934854
 AudioSource:
   m_ObjectHideFlags: 0

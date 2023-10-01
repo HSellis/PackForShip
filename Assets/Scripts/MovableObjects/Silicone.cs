@@ -45,7 +45,7 @@ public class Silicone : MonoBehaviour
             }
 
             audioSource.PlayOneShot(explostionClip);
-            GameController.Instance.GameEnd();
+            GameController.Instance.Invoke("GameEnd",0.5f);
         }
     }
 }

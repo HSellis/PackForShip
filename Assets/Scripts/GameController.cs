@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 
     public float timeRemaining = 30;
     public bool isGameStart = false;
+    public bool isGameEnd = false;
 
     public GameObject winStory;
     public GameObject loseStory;
@@ -28,7 +29,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (isGameStart) {
+        if (isGameStart && !isGameEnd) {
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
@@ -37,7 +38,11 @@ public class GameController : MonoBehaviour
             {
                 timeRemaining = 0;
                 isGameStart = false;
-                GameEnd();
+                if (!isGameEnd) {
+                    GameEnd();
+                }
+                
+                 
             }
             GameUI.Instance.DisplayRemainingTime(timeRemaining);
         }
@@ -51,26 +56,25 @@ public class GameController : MonoBehaviour
     }
 
     public void GameEnd() {
-        // tell object spawner to stop
-        ObjectSpawner.Instance.isGameEnd = true;
-        score = BoxInside.Instance.objectCount;
-        isWin = score >= maxAmountObjects ? true : false;
-        // cutscenes
-        if (isWin) 
-        {
-            winStory.SetActive(true);
-            loseStory.SetActive(false);
+        if (!isGameEnd) {
+            isGameEnd = true;
+            // tell object spawner to stop
+            ObjectSpawner.Instance.isGameEnd = true;
+            score = BoxInside.Instance.objectCount;
+            isWin = score >= maxAmountObjects ? true : false;
+            // cutscenes
+            if (isWin)
+            {
+                winStory.SetActive(true);
+                loseStory.SetActive(false);
+            }
+            else
+            {
+                loseStory.SetActive(true);
+                winStory.SetActive(false);
+            }
+            Invoke("GameEndContinue", 5f); 
         }
-        else
-        {
-            Debug.Log("aaa");
-            loseStory.SetActive(true);
-            winStory.SetActive(false);
-        }
-        Invoke("GameEndContinue", 5f);
-
-
-
 
     }
     public void GameEndContinue() {

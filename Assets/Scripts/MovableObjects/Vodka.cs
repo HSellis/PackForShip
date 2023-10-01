@@ -32,7 +32,7 @@ public class Vodka : MonoBehaviour
     public void Shatter()
     {
         audioSource.PlayOneShot(glassBreakClip);
-        GameController.Instance.GameEnd();
+        GameController.Instance.Invoke("GameEnd",1f);
         Destroy(gameObject);
     }
 }

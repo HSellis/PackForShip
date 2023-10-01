@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.7222125
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.50020576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.6578604
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e56e0c21878fcc42a8e6b1580ed938c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -160,6 +160,7 @@ MonoBehaviour:
   deactivatedTag: Untagged
   grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
   collisionClip: {fileID: 8300000, guid: 5d440183b9234da4c9785d3be95600cd, type: 3}
+  isDeactivated: 0
 --- !u!82 &-981946002500255610
 AudioSource:
   m_ObjectHideFlags: 0
