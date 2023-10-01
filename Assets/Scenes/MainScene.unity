@@ -1655,6 +1655,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7122866147054958600, guid: c8ecf0b8ada1b4842a94b7562d14eb1d, type: 3}
+--- !u!4 &1196538092 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+  m_PrefabInstance: {fileID: 1860719136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211846417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1303262403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2221,6 +2226,7 @@ Transform:
   - {fileID: 391262968}
   - {fileID: 1400701105}
   - {fileID: 1649477634}
+  - {fileID: 1196538092}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354291950
@@ -2992,8 +2998,16 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1309305529}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 99.99996
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 99.99998
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.296
@@ -3008,19 +3022,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.18304467
+      value: 0.18304469
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18298079
+      value: -0.1829808
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6831319
+      value: 0.68313193
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.68289346
+      value: 0.6828935
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 288454c991a5a8342a5b2717290719fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4269,4 +4283,3 @@ SceneRoots:
   - {fileID: 351248019}
   - {fileID: 543450652599756068}
   - {fileID: 370549276}
-  - {fileID: 1860719136}

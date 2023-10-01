@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.01
+      value: 0.97784907
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.518749
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.66
+      value: -0.03911513
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13788c247dbb27645bf73e425ec98643, type: 3}
       propertyPath: m_LocalRotation.w
@@ -159,6 +159,7 @@ MonoBehaviour:
   velocityModifier: 5
   deactivatedTag: Untagged
   grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
+  collisionClip: {fileID: 0}
 --- !u!82 &3464568937378969570
 AudioSource:
   m_ObjectHideFlags: 0
