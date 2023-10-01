@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
                 timeRemaining = 0;
                 isGameStart = false;
                 if (!isGameEnd) {
-                    GameEnd();
+                    GameEndBegin(1f);
                 }
                 
                  
@@ -55,29 +55,34 @@ public class GameController : MonoBehaviour
         ObjectSpawner.Instance.Invoke("SpawnObject", 3);
     }
 
-    public void GameEnd() {
+    public void GameEndBegin(float whenContinue) {
         if (!isGameEnd) {
             isGameEnd = true;
             // tell object spawner to stop
             ObjectSpawner.Instance.isGameEnd = true;
             score = BoxInside.Instance.objectCount;
             isWin = score >= maxAmountObjects ? true : false;
-            // cutscenes
-            if (isWin)
-            {
-                winStory.SetActive(true);
-                loseStory.SetActive(false);
-            }
-            else
-            {
-                loseStory.SetActive(true);
-                winStory.SetActive(false);
-            }
-            Invoke("GameEndContinue", 5f); 
-        }
 
+            Invoke("GameEndContinue", whenContinue);
+        }
     }
-    public void GameEndContinue() {
+
+    public void GameEndContinue()
+    {
+        // cutscenes
+        if (isWin)
+        {
+            winStory.SetActive(true);
+            loseStory.SetActive(false);
+        }
+        else
+        {
+            loseStory.SetActive(true);
+            winStory.SetActive(false);
+        }
+        Invoke("GameEndFinish", 5f);
+    }
+    public void GameEndFinish() {
         winStory.SetActive(false);
         loseStory.SetActive(false);
         // tell lid to endgame

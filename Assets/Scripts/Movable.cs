@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movable : MonoBehaviour
 {
-    private Rigidbody rigidBody;
-    private AudioSource audioSource;
+    protected Rigidbody rigidBody;
+    protected AudioSource audioSource;
 
     public float rotatingSpeed = 1;
     public float velocityModifier = 5;
@@ -16,11 +16,10 @@ public class Movable : MonoBehaviour
     public bool isDeactivated = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        Debug.Log(grabClip);
     }
 
     // Update is called once per frame

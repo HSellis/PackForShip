@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vodka : MonoBehaviour
+public class Vodka : Movable
 {
-    private AudioSource audioSource;
     public AudioClip glassBreakClip;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -19,8 +15,10 @@ public class Vodka : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
+
         BowlingBall bowlingBall = collision.gameObject.GetComponent<BowlingBall>();
         Hammer hammer = collision.gameObject.GetComponent<Hammer>();
         if (bowlingBall != null || hammer != null)
@@ -32,7 +30,7 @@ public class Vodka : MonoBehaviour
     public void Shatter()
     {
         audioSource.PlayOneShot(glassBreakClip);
-        GameController.Instance.Invoke("GameEnd",1f);
+        GameController.Instance.GameEndBegin(3);
         Destroy(gameObject);
     }
 }

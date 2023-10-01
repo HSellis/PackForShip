@@ -84,9 +84,6 @@ PrefabInstance:
       addedObject: {fileID: 1191941186982928422}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d17784775469a0f4dae33a2599192285, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3070062573263048642}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d17784775469a0f4dae33a2599192285, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 9153203752942909346}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d17784775469a0f4dae33a2599192285, type: 3}
       insertIndex: -1
@@ -146,24 +143,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2770726782644843321, guid: d17784775469a0f4dae33a2599192285, type: 3}
---- !u!114 &3070062573263048642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3755749992571362901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a98eb6ccb61ff4095906f8c4e314f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotatingSpeed: 2
-  velocityModifier: 5
-  deactivatedTag: Untagged
-  grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
-  collisionClip: {fileID: 8300000, guid: 8c2ba5dd44a67b84a919dbd44c88cf94, type: 3}
-  isDeactivated: 0
 --- !u!114 &9153203752942909346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324ef0fe6c7c6274eadacd1a5c83e544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotatingSpeed: 1
+  velocityModifier: 5
+  deactivatedTag: Untagged
+  grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
+  collisionClip: {fileID: 8300000, guid: 8c2ba5dd44a67b84a919dbd44c88cf94, type: 3}
+  isDeactivated: 0
 --- !u!82 &167645923143511478
 AudioSource:
   m_ObjectHideFlags: 0

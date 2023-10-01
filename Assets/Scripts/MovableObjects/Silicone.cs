@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Silicone : MonoBehaviour
+public class Silicone : Movable
 {
     public float explosionForce = 10.0f;
     public float explosionRadius = 5.0f;
 
-    public AudioClip explostionClip;
-    private AudioSource audioSource;
+    public AudioClip explosionClip;
+    public ParticleSystem explosionParticlesPrefab;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -22,8 +19,10 @@ public class Silicone : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
+
         Lighter lighter = collision.gameObject.GetComponent<Lighter>();
         if (lighter != null)
         {
@@ -44,8 +43,14 @@ public class Silicone : MonoBehaviour
                 }
             }
 
-            audioSource.PlayOneShot(explostionClip);
-            GameController.Instance.Invoke("GameEnd",0.5f);
+            audioSource.PlayOneShot(explosionClip);
+            ParticleSystem explosionParticles = Instantiate(explosionParticlesPrefab, transform.position, transform.rotation);
+            explosionParticles.Emit(1);
+            Destroy(explosionParticles.gameObject, explosionParticles.main.duration);
+
+            Destroy(gameObject);
+
+            GameController.Instance.GameEndBegin(3);
         }
     }
 }

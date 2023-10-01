@@ -36,8 +36,12 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.collider.CompareTag(movableTag))
             {
-                currentMovable = hit.collider.gameObject.GetComponent<Movable>();
-                isHovering = true;
+                if (!isDragging)
+                {
+                    currentMovable = hit.collider.gameObject.GetComponent<Movable>();
+                    isHovering = true;
+                }
+                
                 
                 
             } else if (hit.collider.CompareTag(heightPlaneTag))

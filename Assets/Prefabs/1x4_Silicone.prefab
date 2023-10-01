@@ -176,9 +176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5cbc28672f86e42a77c389757fc87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotatingSpeed: 1
+  velocityModifier: 5
+  deactivatedTag: Untagged
+  grabClip: {fileID: 8300000, guid: b1ff5987ef96bb2439609396ead05d09, type: 3}
+  collisionClip: {fileID: 8300000, guid: 8c2ba5dd44a67b84a919dbd44c88cf94, type: 3}
+  isDeactivated: 0
   explosionForce: 10
   explosionRadius: 5
-  explostionClip: {fileID: 8300000, guid: 5ce51e6151c63964092220220c91b161, type: 3}
+  explosionClip: {fileID: 8300000, guid: 5ce51e6151c63964092220220c91b161, type: 3}
+  explosionParticlesPrefab: {fileID: 3782280423889822337, guid: c341d6ce7dc5201479532ed7da12ff6f, type: 3}
 --- !u!82 &5021205722243643905
 AudioSource:
   m_ObjectHideFlags: 0
