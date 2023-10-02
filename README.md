@@ -13,3 +13,5 @@ Alexander Rannar, Veronika Kukk, Martin Serglov, Helen Nurm, Henri Sellis, Danni
 ## [WebGL game and download](https://ron88.itch.io/pack-for-ship)
 
 ## [JamVote submission link](https://vote.aptgg.ee/event/utgj23/team/6251883517706240)
+
+## [Ludum Dare submission link](https://ldjam.com/events/ludum-dare/54/$377923)
