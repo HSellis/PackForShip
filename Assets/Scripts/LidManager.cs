@@ -41,7 +41,7 @@ public class LidManager : MonoBehaviour
         audioSource.PlayOneShot(chestOpenClip);
     }
 
-    public void EndGame(bool isWin, int score, int maxScore) 
+    public void EndGame(bool isWin, int score, int maxScore, bool isEarlyLose) 
     {
         GameStartPanel.SetActive(false);
         GameEndingPanel.SetActive(true);
@@ -52,7 +52,15 @@ public class LidManager : MonoBehaviour
         else
         {
             GameEndingText.text = "You lose!";
-            GameEndingScoreText.text = "You packed " + score + " out of " + maxScore + " things.";
+
+            if (isEarlyLose)
+            {
+                GameEndingScoreText.text = "You made a mess, no items can be taken with you.";
+            }
+            else
+            {
+                GameEndingScoreText.text = "You packed " + score + " out of " + maxScore + " things.";
+            }
         }
         gameObject.transform.DORotate(lidStartRot, 1f, RotateMode.FastBeyond360);
         audioSource.PlayOneShot(chestCloseClip);

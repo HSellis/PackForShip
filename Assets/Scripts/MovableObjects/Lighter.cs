@@ -51,7 +51,7 @@ public class Lighter : Movable
             Destroy(fireParticleObj.gameObject, fireParticleObj.main.duration);
             Destroy(collidedTrans.gameObject);
 
-            GameController.Instance.GameEndBegin(3);
+            GameController.Instance.GameEndBegin(3, true);
         }
         
     }

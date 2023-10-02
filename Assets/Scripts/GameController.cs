@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public GameObject loseStory;
     public bool isWin=false;
     public int score = 0;
+    private bool isEarlyEnd=false;
 
     public void Awake()
     {
@@ -39,7 +40,7 @@ public class GameController : MonoBehaviour
                 timeRemaining = 0;
                 isGameStart = false;
                 if (!isGameEnd) {
-                    GameEndBegin(1f);
+                    GameEndBegin(1f, false);
                 }
                 
                  
@@ -55,16 +56,24 @@ public class GameController : MonoBehaviour
         ObjectSpawner.Instance.Invoke("SpawnObject", 3);
     }
 
-    public void GameEndBegin(float whenContinue) {
+    public void GameEndBegin(float whenContinue, bool isEarlyLose) {
         if (!isGameEnd) {
             isGameEnd = true;
             // tell object spawner to stop
             ObjectSpawner.Instance.isGameEnd = true;
             score = BoxInside.Instance.objectCount;
             score -= BoxLidChecker.Instance.movablesOutside.Count;
-            isWin = score >= maxAmountObjects ? true : false;
+            isWin = score >= maxAmountObjects*0.75 ? true : false;
+            isEarlyEnd = isEarlyLose;
+            if (isEarlyEnd)
+            {
+                score = -1;
+                isWin = false;
+            }
+            else {
+                BoxLidChecker.Instance.MarkMovablesOutside();
 
-            BoxLidChecker.Instance.MarkMovablesOutside();
+            }
             Invoke("GameEndContinue", whenContinue);
         }
     }
@@ -88,7 +97,7 @@ public class GameController : MonoBehaviour
         winStory.SetActive(false);
         loseStory.SetActive(false);
         // tell lid to endgame
-        LidManager.Instance.EndGame(isWin, score, maxAmountObjects);
+        LidManager.Instance.EndGame(isWin, score, maxAmountObjects, isEarlyEnd);
         
         // move camera to end screen
         CameraMovement.Instance.Invoke("GameEndMovement", 1f);

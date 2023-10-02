@@ -23,6 +23,7 @@ public class Vodka : Movable
         Hammer hammer = collision.gameObject.GetComponent<Hammer>();
         if (bowlingBall != null || hammer != null)
         {
+            Debug.Log("bowling ball");
             Shatter();
         }
     }
@@ -30,7 +31,11 @@ public class Vodka : Movable
     public void Shatter()
     {
         audioSource.PlayOneShot(glassBreakClip);
-        GameController.Instance.GameEndBegin(3);
+        GameController.Instance.GameEndBegin(3, true);
+        Invoke("ShatterEnd", 1f);
+    }
+    public void ShatterEnd() {
         Destroy(gameObject);
+
     }
 }

@@ -53,7 +53,7 @@ public class Silicone : Movable
 
             Destroy(gameObject);
 
-            GameController.Instance.GameEndBegin(3);
+            GameController.Instance.GameEndBegin(3, true);
         }
     }
 }
