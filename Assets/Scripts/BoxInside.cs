@@ -26,7 +26,7 @@ public class BoxInside : MonoBehaviour
     {
         
         Movable collidedMovable = other.gameObject.GetComponent<Movable>();
-        if (collidedMovable != null && !collidedMovable.isDeactivated)
+        if (collidedMovable != null && !collidedMovable.isInBox)
         {
             objectCount++;
             collidedMovable.Deactivate();

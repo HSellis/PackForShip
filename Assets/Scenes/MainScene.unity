@@ -123,6 +123,73 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &24108253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24108256}
+  - component: {fileID: 24108255}
+  - component: {fileID: 24108254}
+  m_Layer: 0
+  m_Name: BoxLidChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &24108254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24108253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c5a9e4acd28b746893303ca40d3eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movablesOutside: []
+--- !u!65 &24108255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24108253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.35, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &24108256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24108253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.103, z: -0.0133}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &44860760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0fee39e8671cbbf49b50cb2fe0601547, type: 3}
@@ -648,22 +715,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedItems:
   - {fileID: 7659475063436021067, guid: 2b987a60c6e6e9c4ca3913299498e3cd, type: 3}
+  - {fileID: 4906876848370498134, guid: b15b8b2399bee7649bbf3fd1613460ed, type: 3}
   - {fileID: 7052061845208933708, guid: 6f49c7b6fe6507144af870cbcf415644, type: 3}
-  - {fileID: 7083421920945721057, guid: b48f02b9cfca65444a068b92e608e015, type: 3}
-  - {fileID: 6878274276519663076, guid: 6a4af85a4f75e2d49b970b822a554582, type: 3}
-  - {fileID: 4198829467730008182, guid: 371054400ddd61048988d1d50dda2a53, type: 3}
-  - {fileID: 1475477598819433548, guid: f1b221dcbb53ace47b6f2bddb8464665, type: 3}
   - {fileID: 7463355902944078550, guid: 0eacf105c4a21ab4aad963183cdbbc2b, type: 3}
+  - {fileID: 6878274276519663076, guid: 6a4af85a4f75e2d49b970b822a554582, type: 3}
+  - {fileID: 1774543487074928204, guid: 54f032e9a81f58043beb88f67c8eae98, type: 3}
+  - {fileID: 1475477598819433548, guid: f1b221dcbb53ace47b6f2bddb8464665, type: 3}
+  - {fileID: 318182816976795093, guid: 94b531d6eeac19a45ad000c3460d7e27, type: 3}
   - {fileID: 920343257313595231, guid: de727425436edc3488810c776065c6a4, type: 3}
   - {fileID: 9222481763390905910, guid: 30c65eda514493f40bb3f2ba8d2621e0, type: 3}
-  - {fileID: 4906876848370498134, guid: b15b8b2399bee7649bbf3fd1613460ed, type: 3}
-  - {fileID: 4906876848370498134, guid: b15b8b2399bee7649bbf3fd1613460ed, type: 3}
+  - {fileID: 4198829467730008182, guid: 371054400ddd61048988d1d50dda2a53, type: 3}
+  - {fileID: 7083421920945721057, guid: b48f02b9cfca65444a068b92e608e015, type: 3}
   - {fileID: 6541525541329783336, guid: 823b99c731c6d284994d1360804c6fee, type: 3}
   - {fileID: 3755749992571362901, guid: 81566193dd6cf37438609ee7fdd4a92f, type: 3}
-  - {fileID: 6541525541329783336, guid: 823b99c731c6d284994d1360804c6fee, type: 3}
   - {fileID: 4824675624891755589, guid: 29c3f07d258dc944d8198b576077988d, type: 3}
   - {fileID: 237744142924469789, guid: 8c32b6e58b6926f42b48f054765975cd, type: 3}
-  - {fileID: 318182816976795093, guid: 94b531d6eeac19a45ad000c3460d7e27, type: 3}
   spawnVelocityModifier: 2
   spawnVectorRandomizer: 0.25
   maxAngularVelocity: 10
@@ -5324,4 +5390,5 @@ SceneRoots:
   - {fileID: 351248019}
   - {fileID: 543450652599756068}
   - {fileID: 1508449464}
+  - {fileID: 24108256}
   - {fileID: 370549276}

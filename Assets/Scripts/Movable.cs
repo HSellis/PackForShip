@@ -13,7 +13,7 @@ public class Movable : MonoBehaviour
     public AudioClip grabClip;
     public AudioClip collisionClip;
 
-    public bool isDeactivated = false;
+    public bool isInBox = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -53,7 +53,7 @@ public class Movable : MonoBehaviour
     public void Deactivate()
     {
         gameObject.tag = deactivatedTag;
-        isDeactivated = true;
+        isInBox = true;
     }
 
     public virtual void OnCollisionEnter(Collision collision)

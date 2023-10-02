@@ -35,7 +35,6 @@ public class Lighter : Movable
 
         Book collidedBook = collision.gameObject.GetComponent<Book>();
         Towel collidedTowel = collision.gameObject.GetComponent<Towel>();
-        Debug.Log(collidedBook);
         
         //MeshRenderer collidedRenderer = null;
         if (collidedBook != null || collidedTowel != null)

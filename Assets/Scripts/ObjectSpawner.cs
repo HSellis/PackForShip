@@ -24,13 +24,36 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnQueue = new Queue<GameObject>(spawnedItems);
+        //spawnQueue = new Queue<GameObject>(ShuffleList(spawnedItems));
+        var shuffledList = shuffleGOList(spawnedItems);
+        spawnQueue = new Queue<GameObject>(shuffledList);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private List<GameObject> shuffleGOList(List<GameObject> inputList)
+    {    //take any list of GameObjects and return it with Fischer-Yates shuffle
+        int i = 0;
+        int t = inputList.Count;
+        int r = 0;
+        GameObject p = null;
+        List<GameObject> tempList = new List<GameObject>();
+        tempList.AddRange(inputList);
+
+        while (i < t)
+        {
+            r = Random.Range(i, tempList.Count);
+            p = tempList[i];
+            tempList[i] = tempList[r];
+            tempList[r] = p;
+            i++;
+        }
+
+        return tempList;
     }
 
     private void SpawnObject()

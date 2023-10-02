@@ -61,8 +61,10 @@ public class GameController : MonoBehaviour
             // tell object spawner to stop
             ObjectSpawner.Instance.isGameEnd = true;
             score = BoxInside.Instance.objectCount;
+            score -= BoxLidChecker.Instance.movablesOutside.Count;
             isWin = score >= maxAmountObjects ? true : false;
 
+            BoxLidChecker.Instance.MarkMovablesOutside();
             Invoke("GameEndContinue", whenContinue);
         }
     }
@@ -87,6 +89,7 @@ public class GameController : MonoBehaviour
         loseStory.SetActive(false);
         // tell lid to endgame
         LidManager.Instance.EndGame(isWin, score, maxAmountObjects);
+        
         // move camera to end screen
         CameraMovement.Instance.Invoke("GameEndMovement", 1f);
     }

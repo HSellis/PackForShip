@@ -47,7 +47,7 @@ public class LidManager : MonoBehaviour
         GameEndingPanel.SetActive(true);
         if (isWin) {
             GameEndingText.text = "You win!";
-            GameEndingScoreText.text = "You packed "+score+" out of "+maxScore+" things.";
+            GameEndingScoreText.text = "You packed " + score + " out of " + maxScore + " things.";
         }
         else
         {

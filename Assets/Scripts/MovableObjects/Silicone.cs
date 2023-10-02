@@ -43,7 +43,10 @@ public class Silicone : Movable
                 }
             }
 
-            audioSource.PlayOneShot(explosionClip);
+            GameObject tempAudio = Instantiate(new GameObject(), transform.position, transform.rotation);
+            AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
+            tempSource.PlayOneShot(explosionClip);
+
             ParticleSystem explosionParticles = Instantiate(explosionParticlesPrefab, transform.position, transform.rotation);
             explosionParticles.Emit(1);
             Destroy(explosionParticles.gameObject, explosionParticles.main.duration);
